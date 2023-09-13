@@ -47,7 +47,7 @@ function App() {
      
  return(
     <>
-    <h1>Filmes</h1>
+    <h1>Mercado Estrella</h1>
     <Container sx={{
          display:"flex",
          flexFlow:"row",

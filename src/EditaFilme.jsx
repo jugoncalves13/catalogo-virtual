@@ -3,7 +3,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function EditaFilme() {
+function EditarProduto() {
 
   const { id } = useParams();
 
@@ -83,24 +83,24 @@ function EditaFilme() {
     <Container component="section" maxWidth="xs">
       <Box sx={{
           mt:10,
-          backgroundColor: "#FBC4E7",
+          backgroundColor: "#787BFE",
           padding: "30px",
           display: "flex",
           flexDirection:"column",
           alignItems: "center",
 
       }}>
-        <Typography component="h1" variant='h4'>Editar Filme</Typography>
+        <Typography component="h1" variant='h4'>Editar Produto</Typography>
 
         { erro && ( <Alert severity="warning" sx={{mt: 2, mb: 2}}>{erro}</Alert>) }
-        { editar && ( <Alert severity="success" sx={{mt: 2, mb: 2}}>Filme editado com sucesso!</Alert>) }
+        { editar && ( <Alert severity="success" sx={{mt: 2, mb: 2}}>Produto editado com sucesso!</Alert>) }
 
 
         <Box component="form" onSubmit={Editar}>
 
         <TextField
           type="name"
-          label="Título"
+          label="Nome"
           variant="filled"
           margin="normal"
           value={titulo}
@@ -127,7 +127,7 @@ function EditaFilme() {
           />
           <TextField
           type="name"
-          label="Duração"
+          label="Validade"
           variant="filled"
           margin="normal"
           value={duracao}
@@ -136,7 +136,7 @@ function EditaFilme() {
           />
           <TextField
           type="name"
-          label="Categoria"
+          label="Preço"
           variant="filled"
           margin="normal"
           value={categoria}
@@ -152,11 +152,11 @@ function EditaFilme() {
           onChange={ (e) => setImagem( e.target.value) }
           fullWidth 
           />
-         <Button type="submit" variant="contained" fullWidth sx={ {mt: 2, mb: 3} }>Editar Filme</Button>
+         <Button type="submit" variant="contained" fullWidth sx={ {mt: 2, mb: 3} }>Editar Produto</Button>
         </Box>
       </Box>
     </Container>
   )
 }
 
-export default EditaFilme
+export default EditarProduto;

@@ -2,7 +2,7 @@ import { Alert, Box, Button, Container, ImageList, ImageListItem, TextField, Typ
 import React from 'react'
 import { useState, useEffect } from 'react';
 
-function Filmes() {
+function Produtos() {
 
     const [ titulo, setTitulo ] = useState ( "" );
     const [ descricao, setDescricao ] = useState( "" );
@@ -77,7 +77,7 @@ function Filmes() {
         <Box component="form" onSubmit={Cadastrar}>
         <TextField
           type="name"
-          label="Título"
+          label="Nome"
           variant="filled"
           margin="normal"
           value={titulo}
@@ -104,7 +104,7 @@ function Filmes() {
           />
           <TextField
           type="name"
-          label="Duração"
+          label="Validade"
           variant="filled"
           margin="normal"
           value={duracao}
@@ -113,7 +113,7 @@ function Filmes() {
           />
           <TextField
           type="name"
-          label="Categoria"
+          label="Preço"
           variant="filled"
           margin="normal"
           value={categoria}
@@ -130,22 +130,11 @@ function Filmes() {
           fullWidth 
           />
 
-           <Button type="submit" variant="contained" fullWidth sx={ {mt: 2, mb: 3} }>Cadastrar Filme</Button>
+           <Button type="submit" variant="contained" fullWidth sx={ {mt: 2, mb: 3} }>Cadastrar Produto</Button>
         </Box>
-
       </Box>
-
-
-
-
-
-
-
-
-
-
     </Container>
   )
 }
 
-export default Filmes
+export default Produtos
