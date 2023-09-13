@@ -16,7 +16,7 @@ function Filmes() {
 
     function Cadastrar ( evento ) {
         evento.preventDefault();
-        fetch( process.env.REACT_APP_BACKEND + "users", {
+        fetch( process.env.REACT_APP_BACKEND + "filmes", {
          method: "POST",
          headers: {
            'Content-Type': 'application/json'
