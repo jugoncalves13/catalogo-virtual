@@ -1,6 +1,7 @@
 import { Alert, Box, Button, Container, TextField, Typography } from '@mui/material'
 import React from 'react'
 import { useState, useEffect } from 'react';
+import MenuResponsivo from './components/MenuResponsivo';
 
 function Cadastro() {
 
@@ -56,17 +57,19 @@ function Cadastro() {
 
 
   return (
+    <>
+    <MenuResponsivo/>
     <Container component="section" maxWidth="xs">
       <Box sx={{
           mt:10,
-          backgroundColor: "#DE8BF5",
+          backgroundColor: "#F59AD4",
           padding: "30px",
           display: "flex",
           flexDirection:"column",
           alignItems: "center",
 
       }}>
-        <Typography component="h1" variant='h4'>Cadastrar</Typography>
+        <Typography component="h1" variant='h4'>Cadastro</Typography>
 
         { erro && ( <Alert severity="warning" sx={{mt: 2, mb: 2}}>Desculpe, tente novamente</Alert>) }
         { cadastro && ( <Alert severity="success" sx={{mt: 2, mb: 2}}>Obrigado por se cadastrar!</Alert>) }
@@ -100,7 +103,7 @@ function Cadastro() {
            fullWidth 
           />
            <TextField
-          type="number"
+          type="name"
           label="Telefone"
           variant="filled"   
           margin="normal"
@@ -121,6 +124,7 @@ function Cadastro() {
         </Box>
       </Box>
     </Container>
+    </>
   )
 }
 

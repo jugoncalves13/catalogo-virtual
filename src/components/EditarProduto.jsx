@@ -2,6 +2,7 @@ import { Box, Container, TextField, Typography, Alert, Button } from '@mui/mater
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import MenuResponsivo from './MenuResponsivo';
 
 function EditarProduto() {
 
@@ -80,10 +81,12 @@ function EditarProduto() {
   }
 
   return (
+    <>
+    <MenuResponsivo/>
     <Container component="section" maxWidth="xs">
       <Box sx={{
           mt:10,
-          backgroundColor: "#FFE7E6",
+          backgroundColor: "#F59AD4",
           padding: "30px",
           display: "flex",
           flexDirection:"column",
@@ -118,7 +121,7 @@ function EditarProduto() {
           />
           <TextField
           type="number"
-          label="Ano"
+          label="Categoria"
           variant="filled"
           margin="normal"
           value={ano}
@@ -127,7 +130,7 @@ function EditarProduto() {
           />
           <TextField
           type="name"
-          label="Validade"
+          label="Cor"
           variant="filled"
           margin="normal"
           value={duracao}
@@ -156,6 +159,7 @@ function EditarProduto() {
         </Box>
       </Box>
     </Container>
+    </>
   )
 }
 

@@ -1,6 +1,7 @@
 import { Alert, Box, Button, Container, ImageList, ImageListItem, TextField, Typography } from '@mui/material'
 import React from 'react'
 import { useState, useEffect } from 'react';
+import MenuResponsivo from './MenuResponsivo';
 
 function Produtos() {
 
@@ -58,11 +59,13 @@ function Produtos() {
 
 
   return (
+     <> 
+     <MenuResponsivo/>
     
     <Container component="section" maxWidth="xs">
          <Box sx={{
           mt:10,
-          backgroundColor: "#FFE7E6",
+          backgroundColor: "#F59AD4",
           padding: "30px",
           display: "flex",
           flexDirection:"column",
@@ -94,8 +97,8 @@ function Produtos() {
           fullWidth 
           />
           <TextField
-          type="number"
-          label="Ano"
+          type="name"
+          label="Categoria"
           variant="filled"
           margin="normal"
           value={ano}
@@ -104,7 +107,7 @@ function Produtos() {
           />
           <TextField
           type="name"
-          label="Validade"
+          label="Cor"
           variant="filled"
           margin="normal"
           value={duracao}
@@ -134,7 +137,8 @@ function Produtos() {
         </Box>
       </Box>
     </Container>
+    </>
   )
 }
 
-export default Produtos
+export default Produtos;

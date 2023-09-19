@@ -2,9 +2,12 @@ import { Avatar, Button, Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useActionData } from "react-router-dom";
 import Filme from "./components/Filme";
+import MenuResponsivo from "./components/MenuResponsivo";
+import Foto from "./components/img/foto de fundo.jpg";
 
 function App() {
    
+  document.body.style.backgroundImage = "url("+ Foto + ")";
    const [ filmes, setFilmes ] = useState();
    const [ erro, setErro ] = useState();
 
@@ -47,7 +50,8 @@ function App() {
      
  return(
     <>
-    <h1>Mercado Estrella</h1>
+    <MenuResponsivo />
+    <h1>Produtos</h1>
     <Container sx={{
          display:"flex",
          flexFlow:"row",
