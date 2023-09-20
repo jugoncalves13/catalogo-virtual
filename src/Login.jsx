@@ -34,7 +34,6 @@ function Login() {
   useEffect( () => {
    
      if( login ) {
-      localStorage.setItem( "usuario" , JSON.stringify( {email: email } ) );
       setEmail( "" );
       setSenha( "" );
       Navigate("/");
@@ -61,8 +60,10 @@ function Login() {
     .then( (json ) => {
        
       if( json.user ) {
+        localStorage.setItem( "usuario" , JSON.stringify( json.user._id) );
         setLogin( true );
       }else {
+        localStorage.removeItemItem( "usuario" );
         setErro( true );
       }
     } )
@@ -74,7 +75,7 @@ function Login() {
     <Container component="section" maxWidth="xs">
       <Box sx={{
           mt:10,
-          backgroundColor: "#DE8BF5",
+          backgroundColor: "#F59AD4",
           padding: "30px",
           display: "flex",
           flexDirection:"column",

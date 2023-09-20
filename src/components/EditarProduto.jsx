@@ -19,7 +19,8 @@ function EditarProduto() {
   const [ editar, setEditar ] = useState( false );
 
    useEffect( () => {
-    fetch( process.env.REACT_APP_BACKEND + "filmes/" + id, {
+    const usuario = localStorage.getItem( "usuario" );
+    fetch( process.env.REACT_APP_BACKEND + "produtos/" + usuario + "/" + id, {
       method: "GET",
       headers: {
         'Content-Type': 'application/json'
@@ -49,7 +50,7 @@ function EditarProduto() {
 
    function  Editar( evento ) {
     evento.preventDefault();
-    fetch( process.env.REACT_APP_BACKEND + "filmes", {
+    fetch( process.env.REACT_APP_BACKEND + "produtos", {
       method: "PUT",
       headers: {
         'Content-Type': 'application/json'
@@ -62,7 +63,8 @@ function EditarProduto() {
           ano: ano,
           duracao: duracao,
           categoria: categoria,
-          imagem: imagem
+          imagem: imagem,
+          usuario: localStorage.getItem( "usuario" )
         }
       )
     } )
@@ -120,7 +122,7 @@ function EditarProduto() {
           fullWidth 
           />
           <TextField
-          type="number"
+          type="name"
           label="Categoria"
           variant="filled"
           margin="normal"

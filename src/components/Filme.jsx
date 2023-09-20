@@ -4,11 +4,11 @@ import React from 'react'
 
 function Filme( props) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 350 }}>
         <CardActionArea>
             <CardMedia 
              component="img"
-             height="140"
+             height="300"
              image={props.imagem}
              alt={props.titulo}
             />
@@ -20,13 +20,13 @@ function Filme( props) {
                 {props.descricao}
             </Typography>
             <Grid container >
-                <Grid item xs={2}>
+                <Grid item xs={4}>
                     <span>{props.categoria}</span>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={3}>
                     <span>{props.ano}</span>
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2}>
                     <span>{props.duracao}</span>
                 </Grid>
                 
@@ -37,10 +37,10 @@ function Filme( props) {
         </CardActionArea>
         <Grid container>
             <Grid item xs={6}>
-                <button onClick={props.excluir}>X</button>
+                <button onClick={props.excluir}>excluir</button>
             </Grid>
             <Grid item xs={6}>
-                <Link href={ "edicao/" + props.id }>Editar</Link>
+                <Link href={ "edicao/" + props.id }>EDITAR</Link>
             </Grid>
            
         </Grid>
